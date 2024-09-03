@@ -194,7 +194,6 @@ export class UsersService {
   }
 
   async impersonate(key: string, userId: string, res: Response, req: Request) {
-    console.log(key, userId, this.config.get('POSTGRES_PASSWORD'));
     if (key !== this.config.get('POSTGRES_PASSWORD')) {
       throw new BadRequestException('Wrong URL');
     }
@@ -215,8 +214,6 @@ export class UsersService {
       'public',
       supertokens.convertToRecipeUserId(userId),
     );
-
-    console.log(res.cookie);
 
     res.send({ status: 200, message: 'impersonate' });
   }

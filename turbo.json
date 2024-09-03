@@ -77,7 +77,7 @@
 
     "OLLAMA_HOST"
   ],
-
+  "ui": "tui",
   "tasks": {
     "start-prod": {
       "dependsOn": [ "db:init-resources" ],
